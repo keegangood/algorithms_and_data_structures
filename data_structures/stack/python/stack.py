@@ -9,7 +9,7 @@ class Stack:
 
     def push(self, item):
         '''Add item to the top of the Stack'''
-        self.items.append(item) if not self.is_empty() else 'The Stack is empty.'
+        self.items.append(item)
 
     def pop(self):
         '''Remove item from the top of the Stack'''
@@ -21,9 +21,6 @@ class Stack:
 
     def __repr__(self):
         '''Return the Stack's items and the first item in the Stack'''
-        return f'items: {self.items}, top: {self.items[0]}' if not self.is_empty() else 'The Stack is empty.'
+        return f'{self.items}'
 
-# ------------------------------------------------------------ #
-
-s = Stack()
 
