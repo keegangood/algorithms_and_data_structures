@@ -15,6 +15,7 @@ class SelectionSort(SortAlgo):
                 # the current number becomes the minimum
                 minimum = nums[i]
 
+        # swap first unsorted index with the new minimum
         nums[k] = nums[i]
         nums[i] = minimum
 
