@@ -3,12 +3,7 @@ from random import randint
 def binary_search(arr, target):
     print(arr)
 
-    if len(arr) == 1 and arr[0] != target:
-        return None
-
-    mid = len(arr) // 2
-    left = arr[:mid]
-    right = arr[mid:]
+    if len(arr) == 1 and arr[0
 
     print(left, right, arr[mid], sep=" | ")
 
