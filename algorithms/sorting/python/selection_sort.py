@@ -19,7 +19,7 @@ class SelectionSort(SortAlgo):
         nums[k] = nums[i]
         nums[i] = minimum
 
-    return nums
+        return nums
 
 
 if __name__ == '__main__':
