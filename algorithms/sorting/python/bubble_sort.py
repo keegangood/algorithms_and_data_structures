@@ -25,7 +25,6 @@ class BubbleSort(SortAlgo):
             # if no elements were swapped, the list is sorted
             if not swapped:
                 return nums
-                break
                 
 if __name__ == '__main__':
     b = BubbleSort()
