@@ -16,6 +16,14 @@ class NearestMine:
         self.rows = len(maze)
         self.cols = len(maze[0])
     
+    def find_mines(self):
+        mines = deque()
+        for y in range(self.rows):
+            for x in range(self.cols):
+                if self.maze[y][x] == 'M':
+                    mines.append((y,x))
+
+        return mines
 
     def in_bounds(self, cell):
         y,x = cell
@@ -34,7 +42,34 @@ class NearestMine:
         return neighbors                
 
     def find_nearest_mines(self):
+        Q = self.find_mines()
+        level = 1
+
+        while Q:
+            q = Q.copy()
+            Q.clear()
+
+            next_level = deque()
+            while q:
+                cell = q.popleft()
+                neighbors = self.get_neighbors(cell)
+
+                for neighbor in neighbors:
+                    y,x = neighbor
+
+                    if self.maze[y][x] == 'O':
+                        next_level.append(neighbor)
+                        self.maze[y][x] = f'{level}'
+                    elif self.maze[y][x] == 'X':
+                        self.maze[y][x] = '*'
+                    elif self.maze[y][x] in ['M', 'B']:
+                        self.maze[y][x] = 'B'
+
+            level += 1
+            Q = next_level
         
+        return self.maze
+
 
 maze = [
     ['O', 'M', 'O', 'O', 'X'],
@@ -47,4 +82,7 @@ maze = [
 
 N = NearestMine(maze)
 
-N.find_nearest_mines()
+result = N.find_nearest_mines()
+
+for row in result:
+    print(row)
