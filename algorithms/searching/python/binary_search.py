@@ -1,11 +1,7 @@
 from random import randint
 
 def binary_search(arr, target):
-    print(arr)
-
     if len(arr) == 1 and arr[0
-
-    print(left, right, arr[mid], sep=" | ")
 
     if arr[mid] == target:
         print(mid)
