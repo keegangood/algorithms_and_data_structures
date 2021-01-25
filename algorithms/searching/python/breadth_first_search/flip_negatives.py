@@ -2,7 +2,9 @@ from collections import deque
 from random import randint
 
 '''
-
+Given an M x N matrix of integers whose cells can contain a negative, 
+zero or positive integer, determine the minimum number
+of passes required to convert all negative numbersin the matrix to positive. 
 '''
 
 class FlipNegatives:
