@@ -6,8 +6,8 @@ class Node:
     def set_next(self, node):
         self.next = node
 
-    def __repr__(self):
-        return self.val 
+    def __str__(self):
+        return str(self.val) 
 
 class SLinkedList:
     def __init__(self, head=None):
