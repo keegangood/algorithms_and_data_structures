@@ -4,7 +4,7 @@ def remove_duplicates(linked_list):
     '''
     remove all duplicates from a linked list
     Time complexity: O(n)
-    Space complexity: O(n)
+    Space complexity: O(n - duplicates)
     '''
     items = {}
 
