@@ -3,26 +3,19 @@ class Node:
         self.val = val
         self.next = None
 
-    def set_next(self, node):
-        self.next = node
-
-    def __str__(self):
-        return str(self.val) 
 
 class SLinkedList:
     def __init__(self, head=None):
         self.head = head
 
-    def __iter__(self):
-        node = self.head
-        while node is not None:
-            yield node
-            node = node.next
-
-    def __repr__(self):
+    def __str__(self):
         nodes = []
-        for node in self:
-            nodes.append(str(node.val))
+        curr = self.head
+
+        while curr != None:
+            nodes.append(str(curr.val))
+            curr = curr.next
+
         return '-> '.join(nodes)
 
 
@@ -30,19 +23,15 @@ if __name__ == '__main__':
     import random
 
     s = SLinkedList()
+    s.head = Node(1)
+    # print(s)
+    
+    # for i in range(10):
+        # n = Node(i)
+        # curr.next = n
+        # curr = n
 
-    for i in range(10):
-        if not s.head:
-            s.head = Node(i)
-            curr = s.head
 
-        else:
-            n = Node(i)
-            curr.next = n 
 
-            curr = n        
-
-        
-        
-    print(s) 
+    # print(s)
     # 0-> 1-> 2-> 3-> 4-> 5-> 6-> 7-> 8-> 9
