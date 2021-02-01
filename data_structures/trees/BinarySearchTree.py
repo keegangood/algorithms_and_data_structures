@@ -9,7 +9,7 @@ class BSTNode:
     def __repr__(self):
         return str(self.val)
 
-class BinarySearchTree:
+class BST:
     def __init__(self):
         self.root = None
     
@@ -66,12 +66,45 @@ class BinarySearchTree:
         
     def delete(self, val):
         pass
+    
+    def preorder(self, n):
+        '''left -> root -> right'''
+        if n is None:
+            return
+
+        self.preorder(n.left)
+
+        print(n.val, end=' ')
+
+        self.preorder(n.right)
+
+    def postorder(self, n):
+        '''right -> root -> left'''
+        if n is None:
+            return
+        
+        self.postorder(n.right)
+
+        print(n.val, end=' ')
+
+        self.postorder(n.left)
+
+    def inorder(self, n):
+        '''root -> left -> right'''
+        if n is None:
+            return
+        
+        print(n.val, end=' ')
+
+        self.inorder(n.left)
+
+        self.inorder(n.right)
 
 
 if __name__ == '__main__':
     from random import randint
 
-    bst = BinarySearchTree()
+    bst = BST()
 
     nums = [randint(1, 10) for i in range(10)]
 
